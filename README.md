@@ -1,8 +1,5 @@
-# Python Template
+# Continuous Integration for Python Data Science
 
-A general use Python template.
-
-[![Build Status](https://github.com/NickStrauch13/python-template/actions/workflows/python-ci.yml/badge.svg)](https://github.com/NickStrauch13/python-template/actions)
 
 ## About the template
 - Inside the ``.devcontainer`` directory, you'll find a Dockerfile and devcontainer.json. The Dockerfile outlines how to construct the container, while other settings in this directory manage the development environment configuration.
