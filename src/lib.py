@@ -1,6 +1,7 @@
 """
 Common functions between the script and notebook.
 """
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -41,8 +42,9 @@ def remove_outliers(fish_df: DataFrame) -> DataFrame:
     return fish_df
 
 
-def save_species_count_plot(dest: str = "../img/species_distribution.png") -> None:
+def save_species_count_plot() -> None:
     """Save a bar plot of the species counts."""
+    plt.clf()
     fish_df = get_fish_dataframe()
     species_counts = fish_df["Species"].value_counts()
     custom_palette = sns.color_palette("Set3", len(species_counts))
@@ -60,11 +62,13 @@ def save_species_count_plot(dest: str = "../img/species_distribution.png") -> No
     ax.spines["right"].set_visible(False)
     ax.grid(axis="y", linestyle="--", alpha=0.7)
     plt.tight_layout()
-    plt.savefig(dest, dpi=300)
+    dest = os.path.join(os.path.dirname(__file__), "..", "img", "species_distribution.png")
+    plt.savefig(dest)
 
 
 def save_length_vs_height_density_plot():
     """Plot the relationship between length and height, colored by density."""
+    plt.clf()
     fish_df = get_fish_dataframe()
     fish_df = remove_outliers(fish_df)
     fish_df["Density"] = fish_df["Weight"] / (
@@ -77,12 +81,14 @@ def save_length_vs_height_density_plot():
     plt.xlabel("Length")
     plt.ylabel("Height")
     plt.title("Length vs Height (Color by Density)")
-    plt.savefig("../img/density_relationship.png")
+    dest = os.path.join(os.path.dirname(__file__), "..", "img", "density_relationship.png")
+    plt.savefig(dest)
 
 
-def write_stats_to_markdown(dest: str = "../output/summary_stats.md") -> None:
+def write_stats_to_markdown() -> None:
     """Write the statistics to a Markdown file."""
     stats = get_csv_stats()
     # Save the summary stats to a markdown file
+    dest = os.path.join(os.path.dirname(__file__), "..", "output", "summary_stats.md")
     with open(dest, "w", encoding="utf-8") as f:
         f.write(stats.to_markdown())
