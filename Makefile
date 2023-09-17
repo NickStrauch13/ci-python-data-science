@@ -9,6 +9,6 @@ format:
 	black src/*.py 
 
 lint:
-	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
+	pylint --disable=R,C --ignore-patterns=test_.*?py src/*.py
 		
 all: install lint format test

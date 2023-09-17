@@ -62,7 +62,9 @@ def save_species_count_plot() -> None:
     ax.spines["right"].set_visible(False)
     ax.grid(axis="y", linestyle="--", alpha=0.7)
     plt.tight_layout()
-    dest = os.path.join(os.path.dirname(__file__), "..", "img", "species_distribution.png")
+    dest = os.path.join(
+        os.path.dirname(__file__), "..", "img", "species_distribution.png"
+    )
     plt.savefig(dest)
 
 
@@ -81,7 +83,9 @@ def save_length_vs_height_density_plot():
     plt.xlabel("Length")
     plt.ylabel("Height")
     plt.title("Length vs Height (Color by Density)")
-    dest = os.path.join(os.path.dirname(__file__), "..", "img", "density_relationship.png")
+    dest = os.path.join(
+        os.path.dirname(__file__), "..", "img", "density_relationship.png"
+    )
     plt.savefig(dest)
 
 
