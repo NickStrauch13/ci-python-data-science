@@ -3,12 +3,14 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python -m pytest -vv --cov=src.lib
+	pytest -vv --cov=src
+	pytest --nbval src/*.ipynb
 
 format:	
-	black src/*.py 
+	black src/*.py tests/*.py
 
 lint:
-	pylint --disable=R,C --ignore-patterns=test_.*?py src/*.py
+	ruff check src/*.py tests/*.py
+	nbqa ruff src/*.ipynb
 		
 all: install lint format test

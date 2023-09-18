@@ -31,17 +31,17 @@ def generate_markdown() -> None:
 
 if __name__ == "__main__":
     print("Descriptive Statistics")
-    stats = get_descriptive_stats()
+    stats = get_descriptive_stats()  # pragma: no cover
     print("   Feature Averages")
     for key in stats:
         print(f"     {key}: {round(stats[key]['mean'], 2)}")
 
     print("Species Statistics")
-    species_stats = get_species_stats()
+    species_stats = get_species_stats()  # pragma: no cover
     print("   Species Counts")
     count_data = species_stats[("Weight", "count")]
     for key in count_data:
         print(f"     {key}: {int(count_data[key])}")
 
-    generate_plots()
-    generate_markdown()
+    generate_plots()  # pragma: no cover
+    generate_markdown()  # pragma: no cover
