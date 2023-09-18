@@ -1,7 +1,7 @@
 # Continuous Integration for Python Data Science
 
 
-## About the template
+## About
 - Inside the ``.devcontainer`` directory, you'll find a Dockerfile and devcontainer.json. The Dockerfile outlines how to construct the container, while other settings in this directory manage the development environment configuration.
 
 - The ``.github/workflows`` directory houses GitHub Actions configurations, enabling the setup of automated pipelines for building, testing, and deploying your project.
