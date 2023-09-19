@@ -85,7 +85,7 @@ def test_save_length_vs_height_density_plot():
 
 def test_write_stats_to_markdown():
     """
-    Test that the markdown file is generated.
+    Test that the summary markdown file is generated.
     """
     write_stats_to_markdown()
     assert os.path.exists("/workspaces/ci-python-data-science/output/summary_stats.md")
