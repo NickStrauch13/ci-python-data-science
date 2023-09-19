@@ -7,10 +7,10 @@ test:
 	pytest --nbval src/*.ipynb
 
 format:	
-	black src/*.py tests/*.py
+	black src/*.py
 
 lint:
-	ruff check src/*.py tests/*.py
+	ruff check src/*.py
 	nbqa ruff src/*.ipynb
 
 all: install lint format test
