@@ -1,7 +1,7 @@
 """
 A script utilizing the descriptive statistics functions in the lib.py module.
 """
-import src.lib as lib
+import lib
 
 
 def get_descriptive_stats() -> dict:
