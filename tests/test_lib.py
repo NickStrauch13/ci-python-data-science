@@ -9,7 +9,7 @@ from src.lib import (
     remove_outliers,
     save_species_count_plot,
     save_length_vs_height_density_plot,
-    write_stats_to_markdown
+    write_stats_to_markdown,
 )
 
 
