@@ -19,6 +19,9 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: 3.x
+    
+    - name: Set PYTHONPATH
+      run: echo "::set-env name=PYTHONPATH::/workspaces/ci-python-data-science:${PYTHONPATH}"
 
     - name: Install packages
       run: make install
