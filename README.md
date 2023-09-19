@@ -33,3 +33,4 @@ GitHub Actions is used to run the Makefile in this order: `make install`, `make 
 ![Alt text](img/format_result.png)
 ***
 ![Alt text](img/test_result.png)
+![Alt text](img/nbval_result.png)
