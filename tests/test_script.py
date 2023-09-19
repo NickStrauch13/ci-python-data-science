@@ -2,12 +2,22 @@
 Test the descriptive statistics script.
 """
 import os
-from src.descriptive_stats import (
-    get_descriptive_stats,
-    get_species_stats,
-    generate_plots,
-    generate_markdown,
-)
+import sys
+try:
+    from src.descriptive_stats import (
+        get_descriptive_stats,
+        get_species_stats,
+        generate_plots,
+        generate_markdown,
+    )
+except ModuleNotFoundError:
+    sys.path.append("/workspaces/ci-python-data-science")
+    from src.descriptive_stats import (
+        get_descriptive_stats,
+        get_species_stats,
+        generate_plots,
+        generate_markdown,
+    )
 
 
 def test_stat_validity():

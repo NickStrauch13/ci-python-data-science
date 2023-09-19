@@ -2,16 +2,28 @@
 Test the lib.py functions.
 """
 import os
-from src.lib import (
-    get_fish_dataframe,
-    get_csv_stats,
-    get_species_stats,
-    remove_outliers,
-    save_species_count_plot,
-    save_length_vs_height_density_plot,
-    write_stats_to_markdown,
-)
-
+import sys
+try:
+    from src.lib import (
+        get_fish_dataframe,
+        get_csv_stats,
+        get_species_stats,
+        remove_outliers,
+        save_species_count_plot,
+        save_length_vs_height_density_plot,
+        write_stats_to_markdown,
+    )
+except ModuleNotFoundError:
+    sys.path.append("/workspaces/ci-python-data-science")
+    from src.lib import (
+        get_fish_dataframe,
+        get_csv_stats,
+        get_species_stats,
+        remove_outliers,
+        save_species_count_plot,
+        save_length_vs_height_density_plot,
+        write_stats_to_markdown,
+    )
 
 def test_get_fish_dataframe():
     """
