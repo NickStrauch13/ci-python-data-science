@@ -1,4 +1,4 @@
-name: CI
+name: Format
 
 on:
   push:
@@ -20,14 +20,6 @@ jobs:
       with:
         python-version: 3.x
 
-    - name: Install packages
-      run: make install
-
-    - name: Lint
-      run: make lint
-
     - name: Format Black
       run: make format
       
-    - name: Run tests
-      run: make test

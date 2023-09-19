@@ -12,5 +12,8 @@ format:
 lint:
 	ruff check src/*.py tests/*.py
 	nbqa ruff src/*.ipynb
-		
+
 all: install lint format test
+
+summary:
+	python src/descriptive_stats.py

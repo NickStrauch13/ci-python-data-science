@@ -1,4 +1,4 @@
-name: CI
+name: Install
 
 on:
   push:
@@ -21,13 +21,5 @@ jobs:
         python-version: 3.x
 
     - name: Install packages
-      run: make install
-
-    - name: Lint
-      run: make lint
-
-    - name: Format Black
-      run: make format
-      
-    - name: Run tests
-      run: make test
+      run: make install        
+  

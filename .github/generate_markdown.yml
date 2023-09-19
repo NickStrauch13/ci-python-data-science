@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
+        
+    - name: Install packages
+      run: make install
+
+    - name: Generate Summary Statistics
+      run: make summary
+
+    - name: Commit and push on change
+      run: |
+        git config --global user.name  "nickjstrauch@gmail.com"
+        git config --global user.name "NickStrauch13"
+        git add  output/summary_stats.md
+        git commit -m "Auto update summarystats.md" || echo "No changes to commit"
+        git push
