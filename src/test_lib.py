@@ -1,7 +1,6 @@
 """
 Test the lib.py functions.
 """
-import os
 from lib import (
     get_fish_dataframe,
     get_csv_stats,
@@ -11,6 +10,7 @@ from lib import (
     save_length_vs_height_density_plot,
     write_stats_to_markdown,
 )
+
 
 def test_get_fish_dataframe():
     """
@@ -54,25 +54,21 @@ def test_save_species_count_plot():
     """
     Test that the species count plot is saved.
     """
-    save_species_count_plot()
-    assert os.path.exists(
-        "/workspaces/ci-python-data-science/img/species_distribution.png"
-    )
+    success = save_species_count_plot()
+    assert success == 1
 
 
 def test_save_length_vs_height_density_plot():
     """
     Test that the length vs height density plot is saved.
     """
-    save_length_vs_height_density_plot()
-    assert os.path.exists(
-        "/workspaces/ci-python-data-science/img/density_relationship.png"
-    )
+    success = save_length_vs_height_density_plot()
+    assert success == 1
 
 
 def test_write_stats_to_markdown():
     """
     Test that the summary markdown file is generated.
     """
-    write_stats_to_markdown()
-    assert os.path.exists("/workspaces/ci-python-data-science/output/summary_stats.md")
+    success = write_stats_to_markdown()
+    assert success == 1

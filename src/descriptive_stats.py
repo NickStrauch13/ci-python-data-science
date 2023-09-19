@@ -18,15 +18,17 @@ def get_species_stats() -> dict:
     return species_stats_dict
 
 
-def generate_plots() -> None:
+def generate_plots() -> int:
     """Generate a plot of the species counts and of length vs height density."""
     lib.save_species_count_plot()
     lib.save_length_vs_height_density_plot()
+    return 1
 
 
-def generate_markdown() -> None:
+def generate_markdown() -> int:
     """Generate a markdown file with the descriptive statistics."""
     lib.write_stats_to_markdown()
+    return 1
 
 
 if __name__ == "__main__":

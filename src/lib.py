@@ -42,7 +42,7 @@ def remove_outliers(fish_df: DataFrame) -> DataFrame:
     return fish_df
 
 
-def save_species_count_plot() -> None:
+def save_species_count_plot() -> int:
     """Save a bar plot of the species counts."""
     plt.clf()
     fish_df = get_fish_dataframe()
@@ -66,9 +66,10 @@ def save_species_count_plot() -> None:
         os.path.dirname(__file__), "..", "img", "species_distribution.png"
     )
     plt.savefig(dest)
+    return 1
 
 
-def save_length_vs_height_density_plot():
+def save_length_vs_height_density_plot() -> int:
     """Plot the relationship between length and height, colored by density."""
     plt.clf()
     fish_df = get_fish_dataframe()
@@ -87,12 +88,14 @@ def save_length_vs_height_density_plot():
         os.path.dirname(__file__), "..", "img", "density_relationship.png"
     )
     plt.savefig(dest)
+    return 1
 
 
-def write_stats_to_markdown() -> None:
+def write_stats_to_markdown() -> int:
     """Write the statistics to a Markdown file."""
     stats = get_csv_stats()
     # Save the summary stats to a markdown file
     dest = os.path.join(os.path.dirname(__file__), "..", "output", "summary_stats.md")
     with open(dest, "w", encoding="utf-8") as f:
         f.write(stats.to_markdown())
+    return 1

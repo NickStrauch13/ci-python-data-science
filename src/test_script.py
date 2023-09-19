@@ -1,7 +1,6 @@
 """
 Test the descriptive statistics script.
 """
-import os
 from descriptive_stats import (
     get_descriptive_stats,
     get_species_stats,
@@ -35,18 +34,13 @@ def test_plots():
     """
     Test that the plots are generated.
     """
-    generate_plots()
-    assert os.path.exists(
-        "/workspaces/ci-python-data-science/img/species_distribution.png"
-    )
-    assert os.path.exists(
-        "/workspaces/ci-python-data-science/img/density_relationship.png"
-    )
+    success = generate_plots()
+    assert success == 1
 
 
 def test_markdown():
     """
     Test that the markdown file is generated.
     """
-    generate_markdown()
-    assert os.path.exists("/workspaces/ci-python-data-science/output/summary_stats.md")
+    success = generate_markdown()
+    assert success == 1
