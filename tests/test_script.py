@@ -11,7 +11,7 @@ try:
         generate_markdown,
     )
 except ModuleNotFoundError:
-    sys.path.append("/workspaces/ci-python-data-science")
+    sys.path.append("../")
     from src.descriptive_stats import (
         get_descriptive_stats,
         get_species_stats,

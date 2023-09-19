@@ -14,7 +14,7 @@ try:
         write_stats_to_markdown,
     )
 except ModuleNotFoundError:
-    sys.path.append("/workspaces/ci-python-data-science")
+    sys.path.append("../")
     from src.lib import (
         get_fish_dataframe,
         get_csv_stats,
