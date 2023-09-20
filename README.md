@@ -6,6 +6,13 @@
 [![Format](https://github.com/NickStrauch13/ci-python-data-science/actions/workflows/format.yml/badge.svg)](https://github.com/NickStrauch13/ci-python-data-science/actions/workflows/format.yml)
 [![Test](https://github.com/NickStrauch13/ci-python-data-science/actions/workflows/test.yml/badge.svg)](https://github.com/NickStrauch13/ci-python-data-science/actions/workflows/test.yml)
 
+
+
+## Data Visualizations
+![!\[Alt text\](img/density_relationship.png)](img/species_distribution.png)
+
+![Alt text](img/density_relationship.png)
+
 ## About
 - Inside the ``.devcontainer`` directory, you'll find a Dockerfile and devcontainer.json. The Dockerfile outlines how to construct the container, while other settings in this directory manage the development environment configuration.
 
@@ -25,11 +32,13 @@
 GitHub Actions is used to run the Makefile in this order: `make install`, `make lint`, `make format`, `make test`.
 
 ``Makefile`` recipe results:
-***
+
+**Install**
 ![Alt text](img/install_result.png)
-***
+**Lint**
 ![Alt text](img/lint_result.png)
-***
+**Format**
 ![Alt text](img/format_result.png)
-***
+**Test**
 ![Alt text](img/test_result.png)
+![Alt text](img/nbval_result.png)
