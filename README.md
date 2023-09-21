@@ -6,6 +6,8 @@
 [![Format](https://github.com/NickStrauch13/ci-python-data-science/actions/workflows/format.yml/badge.svg)](https://github.com/NickStrauch13/ci-python-data-science/actions/workflows/format.yml)
 [![Test](https://github.com/NickStrauch13/ci-python-data-science/actions/workflows/test.yml/badge.svg)](https://github.com/NickStrauch13/ci-python-data-science/actions/workflows/test.yml)
 
+## Video Walkthrough
+[Click Here for Video Walkthrough](https://youtu.be/gpcSHe53CIw)
 
 ## About
 - Inside the ``.devcontainer`` directory, you'll find a Dockerfile and devcontainer.json. The Dockerfile outlines how to construct the container, while other settings in this directory manage the development environment configuration.
